@@ -1,0 +1,104 @@
+{
+    "browserpass": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "browserpass",
+        "passthru": {
+            "id": "naepdomgkenhinolocfifgehidddafch"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-eEKjfaqxLtiV/YuL2c59P7IkbnY6o3+1st4cEJQ7nr8=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dnaepdomgkenhinolocfifgehidddafch%26installsource%3Dondemand%26uc&extversion=3.7.2"
+        },
+        "version": "3.7.2"
+    },
+    "metamask": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "metamask",
+        "passthru": {
+            "id": "nkbihfbeogaeaoehlefnkodbefgpgknn"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-GxMp4pPDX3qeh2cKTAVJfxXnddva+FLjEkvPdeeqplU=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dnkbihfbeogaeaoehlefnkodbefgpgknn%26installsource%3Dondemand%26uc&extversion=10.29.0"
+        },
+        "version": "10.29.0"
+    },
+    "pricelabs": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pricelabs",
+        "passthru": {
+            "id": "ahfbjnblgpemcceknnebmkjgbgkfdfod"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-S1hF+bbAK+lj2Tnue25N6m8dK1xJ8YXPQQQGmbcOP7Y=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dahfbjnblgpemcceknnebmkjgbgkfdfod%26installsource%3Dondemand%26uc&extversion=0.0.2.7"
+        },
+        "version": "0.0.2.7"
+    },
+    "rabby": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "rabby",
+        "passthru": {
+            "id": "acmacodkjbdgmoleebolmdjonilkdbch"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-7vONGcorNZox1WXkyc+d3YKkpeUHwlwJczXwHTAGZwE=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dacmacodkjbdgmoleebolmdjonilkdbch%26installsource%3Dondemand%26uc&extversion=0.82.0"
+        },
+        "version": "0.82.0"
+    },
+    "ublock-origin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "ublock-origin",
+        "passthru": {
+            "id": "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-YW374iXwZYvmi9xzyXFbVu+k1/8iBPQsS37/pZCD12E=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dcjpalhdlnbpafiamejdnhcphjbkeiagm%26installsource%3Dondemand%26uc&extversion=1.49.2"
+        },
+        "version": "1.49.2"
+    },
+    "urbit-visor": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "urbit-visor",
+        "passthru": {
+            "id": "oadimaacghcacmfipakhadejgalcaepg"
+        },
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-WLNmQIi78Brd6+IDE/N1FUAXB1DkdGjVMchJS83gT8w=",
+            "type": "url",
+            "url": "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Doadimaacghcacmfipakhadejgalcaepg%26installsource%3Dondemand%26uc&extversion=0.4.2"
+        },
+        "version": "0.4.2"
+    }
+}

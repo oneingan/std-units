@@ -1,0 +1,17 @@
+{
+  "widevine": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "widevine",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-29C8D5UbUbBNF8thyjFlbu6Xm5XXcXyqhvNUKpOlQrI=",
+      "type": "url",
+      "url": "https://dl.google.com/widevine-cdm/4.10.2557.0-linux-x64.zip"
+    },
+    "version": "4.10.2557.0"
+  }
+}

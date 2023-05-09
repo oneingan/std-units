@@ -1,0 +1,22 @@
+{
+    "keyd": {
+        "cargoLocks": null,
+        "date": "2023-04-29",
+        "extract": null,
+        "name": "keyd",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rvaiya",
+            "repo": "keyd",
+            "rev": "41bcceef3c4c1876b5df0a5ba48812fa7c61d908",
+            "sha256": "sha256-dotfscZA5vfXxNsvVNMNhQqYjrZFPZuMN0Hgi8ojtFM=",
+            "type": "github"
+        },
+        "version": "41bcceef3c4c1876b5df0a5ba48812fa7c61d908"
+    }
+}

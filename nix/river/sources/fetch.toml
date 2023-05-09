@@ -1,0 +1,5 @@
+[river]
+#src.manual = "v0.2.1"
+src.github = "riverwm/river"
+fetch.github = "riverwm/river"
+git.fetchSubmodules = true

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <filename>/var/lib/webgrabplus/rex/guide.xml</filename>
+  <title lang="es">{[COLOR yellow]'title'[/COLOR]}</title>
+  <title lang="en">{'title'}</title>
+  <sub-title lang="es">[COLOR orange]{'episode' }[/COLOR]'subtitle'</sub-title>
+  <sub-title lang="en">{'episode' }'subtitle' </sub-title>
+  <desc lang="es">{[B]'productiondate'[/B] / }{Edad: 'rating' / }{[COLOR yellow]'starrating'[/COLOR] }{\n'description'}{\n[B][COLOR orange]Director:[/COLOR][/B] 'director(, )'. }{\n[B][COLOR orange]Reparto:[/COLOR][/B] 'actor(, )'.}{\n[B][COLOR orange]Presenta:[/COLOR][/B] 'presenter(, )'.}{\n[B][COLOR orange]Guión:[/COLOR][/B] 'writer(, )'.}{\n[B][COLOR orange]Música:[/COLOR][/B] 'composer(, )'.}{\n[B][COLOR orange]Producción:[/COLOR][/B] 'producer(, )'.}</desc>
+  <desc lang="en">{'productiondate' | }{Edad: 'rating' | }{'starrating' }{\n'description'}{\nDirector: 'director(, )'. }{\nReparto: 'actor(, )'.}{\nPresenta: 'presenter(, )'.}{\nGuión: 'writer(, )'.}{\nMúsica: 'composer(, )'.}{\nProducción: 'producer(, )'.}</desc>
+  <star-rating></star-rating>
+<!-- country and title original in star-rating-->  
+</settings>
+

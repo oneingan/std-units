@@ -1,0 +1,3 @@
+[keyd]
+src.git = "https://github.com/rvaiya/keyd"
+fetch.github = "rvaiya/keyd"

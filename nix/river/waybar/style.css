@@ -1,0 +1,66 @@
+@import "colors.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: Monospace;
+  font-size: 10px;
+  min-height: 0px;
+}
+
+window#waybar {
+  background: @bgmain;
+  color: @fgmain;
+}
+
+#tags button {
+  padding: 0 5px;
+  background: @bgmain;
+  color: @fgmain;
+  border-bottom: 3px solid @bgmain;
+}
+
+#tags button:hover {
+  background: @bgalt;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  border-bottom-color: @bgalt;
+}
+
+#tags button.occuped {
+  border-bottom-color: @fgalt;
+}
+
+#tags button.urgent {
+  border-bottom-color: @red;
+}
+
+#tags button.focused {
+  background: @bgalt;
+  border-bottom-color: @fgalt;
+}
+
+#battery,
+#tray,
+#clock {
+  background: @bgmain;
+  color: @fgmain;
+  padding: 0 10px;
+}
+
+#battery {
+  border-bottom: 3px solid @bgmain;
+}
+
+#battery.charging,
+#battery.plugged {
+  border-bottom-color: @green-faint;
+}
+
+#battery.warning:not(.charging) {
+  border-bottom-color: @yellow-faint;
+}
+
+#battery.critical:not(.charging) {
+  border-bottom-color: @red-faint;
+}

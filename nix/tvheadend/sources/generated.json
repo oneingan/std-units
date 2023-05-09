@@ -1,0 +1,22 @@
+{
+  "tvheadend": {
+    "cargoLocks": null,
+    "date": "2023-04-19",
+    "extract": null,
+    "name": "tvheadend",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "tvheadend",
+      "repo": "tvheadend",
+      "rev": "18effa8ad93e901f3cdaa534123d910f14453d1f",
+      "sha256": "sha256-v4qfZku6SOUtYUJnlMHBomgMu3bV853G4fDidc2wdS8=",
+      "type": "github"
+    },
+    "version": "18effa8ad93e901f3cdaa534123d910f14453d1f"
+  }
+}

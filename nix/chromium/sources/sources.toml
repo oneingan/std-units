@@ -1,0 +1,29 @@
+[rabby]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/acmacodkjbdgmoleebolmdjonilkdbch | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dacmacodkjbdgmoleebolmdjonilkdbch%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "acmacodkjbdgmoleebolmdjonilkdbch" }
+
+[ublock-origin]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/cjpalhdlnbpafiamejdnhcphjbkeiagm | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dcjpalhdlnbpafiamejdnhcphjbkeiagm%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm" }
+
+[browserpass]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/naepdomgkenhinolocfifgehidddafch | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dnaepdomgkenhinolocfifgehidddafch%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "naepdomgkenhinolocfifgehidddafch" }
+
+[metamask]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/nkbihfbeogaeaoehlefnkodbefgpgknn | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dnkbihfbeogaeaoehlefnkodbefgpgknn%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "nkbihfbeogaeaoehlefnkodbefgpgknn" }
+
+[urbit-visor]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/oadimaacghcacmfipakhadejgalcaepg | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Doadimaacghcacmfipakhadejgalcaepg%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "oadimaacghcacmfipakhadejgalcaepg" }
+
+[pricelabs.co]
+src.cmd = "curl -L https://chrome.google.com/webstore/detail/ahfbjnblgpemcceknnebmkjgbgkfdfod | sed 's/noscript//g' | /nix/store/5qp13sfplc544d4m1vk6nghkd03wnj8j-pup-unstable-2019-09-19/bin/pup 'meta[itemprop=\"version\"] attr{content}'"
+fetch.url = "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=108&x=id%3Dahfbjnblgpemcceknnebmkjgbgkfdfod%26installsource%3Dondemand%26uc&extversion=$ver"
+passthru = { id = "ahfbjnblgpemcceknnebmkjgbgkfdfod" }

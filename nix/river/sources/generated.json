@@ -1,0 +1,22 @@
+{
+  "river": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "river",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": true,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "riverwm",
+      "repo": "river",
+      "rev": "v0.2.3",
+      "sha256": "sha256-noZ2vo4J0cG3PN2k+2LzMc5WMtj0FEmMttE9obFH/tM=",
+      "type": "github"
+    },
+    "version": "v0.2.3"
+  }
+}

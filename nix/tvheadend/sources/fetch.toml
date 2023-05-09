@@ -1,0 +1,3 @@
+[tvheadend]
+src.git = "https://github.com/tvheadend/tvheadend"
+fetch.github = "tvheadend/tvheadend"

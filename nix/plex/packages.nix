@@ -2,8 +2,8 @@
   inputs,
   cell,
 }: {
-  default = inputs.nixpkgs.plex;
-  pass = inputs.nixpkgs.plex.override {
+  plex = inputs.nixpkgs.plex;
+  plex-pass = inputs.nixpkgs.plex.override {
     plexRaw = inputs.nixpkgs.plexRaw.overrideAttrs (old: rec {
       version = "1.32.0.6973-a787c5a8e";
       src = inputs.nixpkgs.fetchurl {

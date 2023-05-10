@@ -20,5 +20,5 @@ in {
     ];
     # checkPhase = false;
   };
-  default = callPackage ./packages/default.nix {};
+  webgrabplus = callPackage ./packages/default.nix {};
 }

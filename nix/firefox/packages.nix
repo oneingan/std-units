@@ -20,7 +20,7 @@
     hash = "sha256-nxz25Y+j+G0YC1uZVJ+mZvqFOoJ8SMsjFVhWawwcPHU=";
   };
 in {
-  default = wrapFirefox firefox-unwrapped {
+  firefox = wrapFirefox firefox-unwrapped {
     extraPolicies = {
       CaptivePortal = false;
       DisableFirefoxStudies = true;

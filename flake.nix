@@ -13,6 +13,11 @@
     std-data-collection.inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  # for packages
+  inputs = {
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+  };
+
   outputs = {
     std,
     self,
@@ -56,7 +61,24 @@
     }
     # soil
     {
-      # packages = std.harvest self ["tow-boot" "packages"];
+      packages = std.harvest self [
+        ["autofirma" "packages"]
+        ["chromium" "packages"]
+        ["emacs" "packages"]
+        ["firefox" "packages"]
+        ["keyd" "packages"]
+        ["kodi" "packages"]
+        ["lieer" "packages"]
+        ["minisatip" "packages"]
+        ["plex" "packages"]
+        ["river" "packages"]
+        ["sway" "packages"]
+        ["swhkd" "packages"]
+        ["tvheadend" "packages"]
+        ["webgrabplus" "packages"]
+        ["widevine" "packages"]
+      ];
+
       devShells = std.harvest self ["_automation" "devshells"];
     };
 }

@@ -2,5 +2,5 @@
   inputs,
   cell,
 }: {
-  default = ./modules/default.nix;
+  minisatip = ./modules/default.nix;
 }

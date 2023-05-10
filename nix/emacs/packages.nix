@@ -113,7 +113,7 @@
         flymake-shellcheck
         fontaine
         goto-last-change
-	inputs.nixpkgs.emacsPackages.jinx
+	      inputs.nixpkgs.emacsPackages.jinx
         js-comint
         keycast
         lin
@@ -173,5 +173,5 @@
 
   finalEmacs = (emacsPackagesFor emacsPgtk).emacsWithPackages extraPackages;
 in {
-  prot = finalEmacs;
+  prot-emacs = finalEmacs;
 }

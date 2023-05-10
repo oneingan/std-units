@@ -39,7 +39,7 @@
   };
 in
   buildFHSUserEnv {
-    name = "WebGrab+Plus";
+    name = "${name}-${version}";
     targetPkgs = pkgs: [
       webgrabplus
       iputils

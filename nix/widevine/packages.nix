@@ -9,7 +9,7 @@
   mkrpath = p: "${l.makeSearchPathOutput "lib" "lib64" p}:${l.makeLibraryPath p}";
   inherit (cell.sources.generated.widevine) src pname version;
 in {
-  default = stdenv.mkDerivation {
+  widevine = stdenv.mkDerivation {
     inherit src pname version;
 
     unpackCmd = "unzip -d ./src $curSrc";

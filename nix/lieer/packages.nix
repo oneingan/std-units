@@ -4,7 +4,7 @@
 }: let
   inherit (inputs) nixpkgs;
 in {
-  default = nixpkgs.lieer.overrideAttrs (old: {
+  lieer = nixpkgs.lieer.overrideAttrs (old: {
     version = "1.4-87e85ef";
     src = nixpkgs.fetchFromGitHub {
       owner = "gauteh";

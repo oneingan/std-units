@@ -16,7 +16,7 @@
     fi
   '';
 in {
-  default = rustPlatform.buildRustPackage {
+  swhkd = rustPlatform.buildRustPackage {
     inherit pname version src;
     cargoLock = cargoLock."Cargo.lock";
 

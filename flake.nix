@@ -79,6 +79,10 @@
         ["widevine" "packages"]
       ];
 
+      nixosModules = std.harvest self [
+        ["minisatip" "modules"]
+      ];
+
       devShells = std.harvest self ["_automation" "devshells"];
     };
 }

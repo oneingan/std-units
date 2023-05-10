@@ -17,7 +17,7 @@ src="https://raw.githubusercontent.com/nix-community/builtwithnix.org/62897617ce
 width="130" height="50"/>
 
 - Intenta seguir una organización y nomenclatura cercana a la [RFC
-  0140(https://github.com/NixOS/rfcs/pull/140).
+  0140](https://github.com/NixOS/rfcs/pull/140).
 - Los paquetes y módulos están preparados para ser entregados flujo
   arriba en el [repositorio oficial de paquetes de
   NixOS](https://github.com/NixOS/nixpkgs/).

@@ -87,6 +87,11 @@
         ["webgrabplus" "modules"]        
       ];
 
+      homeModules = std.harvest self [
+        ["river" "hm-modules"]
+        ["swhkd" "hm-modules"]
+      ];
+
       devShells = std.harvest self ["_automation" "devshells"];
     };
 }

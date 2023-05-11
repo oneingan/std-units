@@ -81,6 +81,10 @@
 
       nixosModules = std.harvest self [
         ["minisatip" "modules"]
+        ["keyd" "modules"]
+        ["swhkd" "modules"]
+        ["tvheadend" "modules"]
+        ["webgrabplus" "modules"]        
       ];
 
       devShells = std.harvest self ["_automation" "devshells"];

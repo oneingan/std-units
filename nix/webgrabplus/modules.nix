@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  default = {
+  webgrabplus = {
     config,
     lib,
     pkgs,

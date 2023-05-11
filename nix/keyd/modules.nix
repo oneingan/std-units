@@ -2,5 +2,5 @@
   inputs,
   cell,
 }: {
-  default = ./modules/keyd.nix;
+  keyd = ./modules/keyd.nix;
 }

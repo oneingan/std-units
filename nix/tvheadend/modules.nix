@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  default = {
+  tvheadend = {
     config,
     lib,
     pkgs,

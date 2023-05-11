@@ -1,6 +1,6 @@
 #from https://github.com/danielphan2003/flk/blob/main/cells/nixos/nixosModules/services/misc/swhkd.nix
 {
-  default = {
+  swhkd = {
     config,
     lib,
     pkgs,

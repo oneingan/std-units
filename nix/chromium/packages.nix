@@ -5,16 +5,20 @@
   inherit (inputs) nixpkgs;
   l = nixpkgs.lib // builtins;
 
-  inherit (nixpkgs) ungoogled-chromium writeText;
+  inherit (nixpkgs) ungoogled-chromium writeText writeTextDir;
 in {
 
   chromeExtensions = let
+
     nvfetcherToJson = ext: builtins.toJSON {
-      inherit (ext) id version;
-      crxPath = ext.src;
+      external_crx = ext.src;
+      external_version = ext.version;
     };
+    
     generated = l.removeAttrs cell.sources.generated ["override" "overrideDerivation"];
-    externalJson = _: ext: writeText "${ext.id}.json" "${nvfetcherToJson ext}"; 
+
+    externalJson = _: ext: writeTextDir "${ext.id}.json" "${nvfetcherToJson ext}";
+    
   in builtins.mapAttrs externalJson generated;
   
   extensions = let

@@ -7,7 +7,16 @@
 
   inherit (nixpkgs) ungoogled-chromium writeText;
 in {
-  ungoogled = ungoogled-chromium;
+
+  chromeExtensions = let
+    nvfetcherToJson = ext: builtins.toJSON {
+      inherit (ext) id version;
+      crxPath = ext.src;
+    };
+    generated = l.removeAttrs cell.sources.generated ["override" "overrideDerivation"];
+    externalJson = _: ext: writeText "${ext.id}.json" "${nvfetcherToJson ext}"; 
+  in builtins.mapAttrs externalJson generated;
+  
   extensions = let
     browserVersion = l.versions.major ungoogled-chromium.version;
     extensions-list = [

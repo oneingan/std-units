@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: {
-  default = {
+  river = {
     config,
     lib,
     pkgs,

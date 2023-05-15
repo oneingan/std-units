@@ -50,16 +50,6 @@ in {
       }
     ];
 
-    # { rabby = { id = "acmacodkjbdgmoleebolmdjonilkdbch";};};
-    # l.map mkChromeExt rabby
-
-    # mkChromeExt = name: id: browserVersion: {
-    #   $name = {
-    #     src.cmd = "curl -L https://chrome.google.com/webstore/detail/${id} | sed 's/noscript//g' | ${nixpkgs.pup}/bin/pup 'meta[itemprop=\"version\"] attr{content}'";
-    #     fetch.url =  "https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=${browserVersion}&x=id%3D${id}%26installsource%3Dondemand%26uc&extversion=$ver";
-    #   };
-    # };
-
     sourcesFile = list:
       writeText "sources.toml" ''
         ${(sourcesEntries list)}

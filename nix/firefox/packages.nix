@@ -19,6 +19,10 @@
     url = "https://addons.mozilla.org/firefox/downloads/file/3815058/privacy_redirect-1.1.49.xpi";
     hash = "sha256-nxz25Y+j+G0YC1uZVJ+mZvqFOoJ8SMsjFVhWawwcPHU=";
   };
+  nordvpn = fetchurl {
+    url = "https://addons.mozilla.org/firefox/downloads/file/4096431/nordvpn_proxy_extension-2.73.8.xpi";
+    hash = "":
+  };
 in {
   firefox = wrapFirefox firefox-unwrapped {
     extraPolicies = {
@@ -83,6 +87,10 @@ in {
         "{b7f9d2cd-d772-4302-8c3f-eb941af36f76}" = {
           installation_mode = "force_installed";
           install_url = "file://${privacy_redirect}";
+        };
+        "nordvnproxy@nordvpn.com" = {
+          installation_mode = "force_installed";
+          install_url = "file://${nordvpn}";
         };
       };
     };

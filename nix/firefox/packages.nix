@@ -21,7 +21,7 @@
   };
   nordvpn = fetchurl {
     url = "https://addons.mozilla.org/firefox/downloads/file/4096431/nordvpn_proxy_extension-2.73.8.xpi";
-    hash = "":
+    hash = "sha256-pp/b4XIvozM5+PsUItO75l4TdaEJLmkAq150crKyZX8=";
   };
 in {
   firefox = wrapFirefox firefox-unwrapped {

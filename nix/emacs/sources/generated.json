@@ -1,62 +1,62 @@
 {
-  "emacs-overlay": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "emacs-overlay",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nix-community",
-      "repo": "emacs-overlay",
-      "rev": "ca955facdc9b29fde6dbd12823b7f4809fc5f18b",
-      "sha256": "sha256-oQS3k66eZ77PE2dg5UaPn5QFc2v5U5KS3ufxWCG7QRc=",
-      "type": "github"
+    "emacs-overlay": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "emacs-overlay",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nix-community",
+            "repo": "emacs-overlay",
+            "rev": "6ec96835d9328bcb245d81c5997eea2ec6144fea",
+            "sha256": "sha256-Iwg/4hpKW8QYLLa+IQcLwy3BSf407IGOnRmdDRhTYdY=",
+            "type": "github"
+        },
+        "version": "6ec96835d9328bcb245d81c5997eea2ec6144fea"
     },
-    "version": "ca955facdc9b29fde6dbd12823b7f4809fc5f18b"
-  },
-  "modus-themes": {
-    "cargoLocks": null,
-    "date": "2023-05-02",
-    "extract": null,
-    "name": "modus-themes",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "protesilaos",
-      "repo": "modus-themes",
-      "rev": "46919766bca4aa527a9a3bf77421182f4cf49594",
-      "sha256": "sha256-J+55fOtTV9ItlyWgm9A6N8Mi8+1PB1OLSIxcixYPOjY=",
-      "type": "github"
+    "modus-themes": {
+        "cargoLocks": null,
+        "date": "2023-06-02",
+        "extract": null,
+        "name": "modus-themes",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "protesilaos",
+            "repo": "modus-themes",
+            "rev": "0f3e96982cb2b9e78df0ee8c96f7a0de211e37e9",
+            "sha256": "sha256-8MyC7/NtnqFLG3BcWLvfZniLgAUpkPtQhhxdKdYl76o=",
+            "type": "github"
+        },
+        "version": "0f3e96982cb2b9e78df0ee8c96f7a0de211e37e9"
     },
-    "version": "46919766bca4aa527a9a3bf77421182f4cf49594"
-  },
-  "nixpkgs-emacs": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "nixpkgs-emacs",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "NixOS",
-      "repo": "nixpkgs",
-      "rev": "1a411f23ba299db155a5b45d5e145b85a7aafc42",
-      "sha256": "sha256-6Va9iVtmmsw4raBc3QKvQT2KT/NGRWlvUlJj46zN8B8=",
-      "type": "github"
-    },
-    "version": "1a411f23ba299db155a5b45d5e145b85a7aafc42"
-  }
+    "nixpkgs-emacs": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nixpkgs-emacs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "NixOS",
+            "repo": "nixpkgs",
+            "rev": "5e871d8aa6f57cc8e0dc087d1c5013f6e212b4ce",
+            "sha256": "sha256-3uQytfnotO6QJv3r04ajSXbEFMII0dUtw0uqYlZ4dbk=",
+            "type": "github"
+        },
+        "version": "5e871d8aa6f57cc8e0dc087d1c5013f6e212b4ce"
+    }
 }

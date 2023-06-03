@@ -88,7 +88,7 @@ in {
           installation_mode = "force_installed";
           install_url = "file://${privacy_redirect}";
         };
-        "nordvnproxy@nordvpn.com" = {
+        "nordvpnproxy@nordvpn.com" = {
           installation_mode = "force_installed";
           install_url = "file://${nordvpn}";
         };

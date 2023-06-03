@@ -12,17 +12,11 @@
     lib
     emacsPackages
     emacsPackagesFor
-    # emacsPgtk
+    emacsPgtk
     
     fetchurl
     emacs
-    wrapGAppsHook
     ;
-
-  # https://github.com/nix-community/emacs-overlay/issues/309
-  emacsPgtk = pkgs.emacsPgtk.overrideAttrs (old: {
-    nativeBuildInputs = old.nativeBuildInputs ++ [wrapGAppsHook];
-  });
 
   parsePackagesFromProtElpaPackage = configText: let
     inherit (import "${cell.sources.emacs-overlay.src}/repos/fromElisp" {inherit pkgs;}) fromElisp;
@@ -50,34 +44,6 @@
       license = lib.licenses.free;
     };
   };
-
-  # ement = emacsPackages.elpaBuild {
-  #   pname = "ement";
-  #   ename = "ement";
-  #   version = "0.8-pre.20221125.201940";
-  #   src = fetchurl {
-  #     url = "https://elpa.gnu.org/devel/ement-0.6pre0.20221125.201940.tar";
-  #     sha256 = "sha256-e8KdZ3POmLwjHjxp/vyTCyhw8Ll/phJ5tf2cnZTr2Oc=";
-  #   };
-  #   packageRequires = with emacsPackages; [
-  #     emacs
-  #     emacsPackages.map
-  #     plz
-  #     svg-lib
-  #     taxy
-  #     taxy-magit-section
-  #     transient
-  #   ];
-  #   meta = {
-  #     homepage = "https://elpa.gnu.org/packages/ement.html";
-  #     license = lib.licenses.free;
-  #   };
-  # };
-
-  #modus-themes-source = cell.sources.modus-themes;
-  #modus-themes = emacsPackages.trivialBuild {
-  #  inherit (modus-themes-source) pname src version;
-  #};
 
   extraPackages = epkgs:
     with epkgs;

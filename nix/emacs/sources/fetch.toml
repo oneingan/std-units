@@ -1,11 +1,11 @@
 # get emacs-overlay cache hit using
 # curl -L https://hydra.nix-community.org/job/emacs-overlay/unstable/emacsPgtk/latest | nix run nixpkgs#pup.out -- 'div#tabs-buildinputs'
 [nixpkgs-emacs]
-src.cmd = "echo 1a411f23ba299db155a5b45d5e145b85a7aafc42"
+src.cmd = "echo 5e871d8aa6f57cc8e0dc087d1c5013f6e212b4ce"
 fetch.github = "NixOS/nixpkgs"
 
 [emacs-overlay]
-src.cmd = "echo ca955facdc9b29fde6dbd12823b7f4809fc5f18b"
+src.cmd = "echo 6ec96835d9328bcb245d81c5997eea2ec6144fea"
 fetch.github = "nix-community/emacs-overlay"
 
 [modus-themes]

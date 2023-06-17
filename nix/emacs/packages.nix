@@ -34,22 +34,22 @@
     with epkgs;
       [
         ## prot
-        # agitate
-        # altcaps
-        # beframe
-        # cursory
-        # denote
-        # ef-themes
-        # fontaine
-        # lin
-        # logos
-        # mct
-        # modus-themes
-        # notmuch-indicator
-        # pulsar
-        # standard-themes
-        # sxhkdrc-mode
-        # tmr
+        elpaDevelPackages.agitate
+        elpaDevelPackages.altcaps
+        elpaDevelPackages.beframe
+        elpaDevelPackages.cursory
+        elpaDevelPackages.denote
+        elpaDevelPackages.ef-themes
+        elpaDevelPackages.fontaine
+        elpaDevelPackages.lin
+        elpaDevelPackages.logos
+        elpaDevelPackages.mct
+        elpaDevelPackages.modus-themes
+        elpaDevelPackages.notmuch-indicator
+        elpaDevelPackages.pulsar
+        elpaDevelPackages.standard-themes
+        elpaDevelPackages.sxhkdrc-mode
+        elpaDevelPackages.tmr
       ] ++ [
         ## third-party
         cape

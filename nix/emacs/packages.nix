@@ -12,7 +12,7 @@
     lib
     emacsPackages
     emacsPackagesFor
-    emacsPgtk
+    emacs-pgtk
     
     fetchurl
     emacs
@@ -60,7 +60,7 @@
         embark
         embark-consult
         goto-last-change
-	      inputs.nixpkgs.emacsPackages.jinx
+        inputs.nixpkgs.emacsPackages.jinx
         keycast
         magit
         marginalia
@@ -94,7 +94,7 @@
 
   # extraPackages = epkgs: map (name: epkgs.${name}) packages;
 
-  finalEmacs = (emacsPackagesFor emacsPgtk).emacsWithPackages extraPackages;
+  finalEmacs = (emacsPackagesFor emacs-pgtk).emacsWithPackages extraPackages;
 in {
   prot-emacs = finalEmacs;
 }

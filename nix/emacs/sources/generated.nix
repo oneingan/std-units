@@ -3,36 +3,36 @@
 {
   emacs-overlay = {
     pname = "emacs-overlay";
-    version = "6ec96835d9328bcb245d81c5997eea2ec6144fea";
+    version = "2628f12023115c1b5e0fdff257cd2e1f4cc199b5";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "emacs-overlay";
-      rev = "6ec96835d9328bcb245d81c5997eea2ec6144fea";
+      rev = "2628f12023115c1b5e0fdff257cd2e1f4cc199b5";
       fetchSubmodules = false;
-      sha256 = "sha256-Iwg/4hpKW8QYLLa+IQcLwy3BSf407IGOnRmdDRhTYdY=";
+      sha256 = "sha256-EyHLxmOnr5LhzT6zci84mOtiNmx7DGRRiY78DxG4FVA=";
     };
   };
   modus-themes = {
     pname = "modus-themes";
-    version = "0f3e96982cb2b9e78df0ee8c96f7a0de211e37e9";
+    version = "99b23d69836d10c76612cc5549faba4116ed85db";
     src = fetchFromGitHub {
       owner = "protesilaos";
       repo = "modus-themes";
-      rev = "0f3e96982cb2b9e78df0ee8c96f7a0de211e37e9";
+      rev = "99b23d69836d10c76612cc5549faba4116ed85db";
       fetchSubmodules = false;
-      sha256 = "sha256-8MyC7/NtnqFLG3BcWLvfZniLgAUpkPtQhhxdKdYl76o=";
+      sha256 = "sha256-/7BACUwFrwQfTVqdNjaUmkrL71JLvO99dyf+oGjIJMI=";
     };
-    date = "2023-06-02";
+    date = "2023-06-15";
   };
   nixpkgs-emacs = {
     pname = "nixpkgs-emacs";
-    version = "5e871d8aa6f57cc8e0dc087d1c5013f6e212b4ce";
+    version = "7c67f006ea0e7d0265f16d7df07cc076fdffd91f";
     src = fetchFromGitHub {
       owner = "NixOS";
       repo = "nixpkgs";
-      rev = "5e871d8aa6f57cc8e0dc087d1c5013f6e212b4ce";
+      rev = "7c67f006ea0e7d0265f16d7df07cc076fdffd91f";
       fetchSubmodules = false;
-      sha256 = "sha256-3uQytfnotO6QJv3r04ajSXbEFMII0dUtw0uqYlZ4dbk=";
+      sha256 = "sha256-tbJ9B8WLCTnVP/LwESRlg0dII6Zyg2LmUU/mB9Lu98E=";
     };
   };
 }

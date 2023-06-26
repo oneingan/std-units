@@ -47,6 +47,7 @@
         elpaDevelPackages.modus-themes
         elpaDevelPackages.notmuch-indicator
         elpaDevelPackages.pulsar
+        elpaDevelPackages.spacious-padding
         elpaDevelPackages.standard-themes
         elpaDevelPackages.sxhkdrc-mode
         elpaDevelPackages.tmr
@@ -76,6 +77,7 @@
         tempel
         trashed
         vertico
+        vundo
         wgrep
       ] ++ [
         ## user

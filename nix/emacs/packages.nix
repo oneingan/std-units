@@ -2,9 +2,9 @@
   inputs,
   cell,
 }: let
-  pkgs = import cell.sources.nixpkgs-emacs.src {
+  pkgs = import inputs.emacs-overlay.inputs.nixpkgs {
     system = "x86_64-linux";
-    overlays = [(import cell.sources.emacs-overlay.src)];
+    overlays = [(import inputs.emacs-overlay)];
   };
 
   inherit
@@ -19,7 +19,7 @@
     ;
 
   parsePackagesFromProtElpaPackage = configText: let
-    inherit (import "${cell.sources.emacs-overlay.src}/repos/fromElisp" {inherit pkgs;}) fromElisp;
+    inherit (import "${inputs.emacs-overlay}/repos/fromElisp" {inherit pkgs;}) fromElisp;
     recurse = item:
       if builtins.isList item && item != []
       then
@@ -86,6 +86,7 @@
         vterm
         direnv
         ement
+        treesit-grammars.with-all-grammars
       ];
   # ++ [
   # ement

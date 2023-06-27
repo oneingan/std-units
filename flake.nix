@@ -16,6 +16,7 @@
   # for packages
   inputs = {
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
   outputs = {

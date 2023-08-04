@@ -2,11 +2,9 @@
   description = "The Hive - The secretly open NixOS-Society";
 
   inputs = {
-    paisano.url = "github:paisano-nix/core";
-    paisano.inputs.nixpkgs.follows = "nixpkgs";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
-    std.inputs.paisano.follows = "paisano";
+    std.inputs.devshell.url = "github:numtide/devshell";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     std-data-collection.url = "github:divnix/std-data-collection";
     std-data-collection.inputs.std.follows = "std";
@@ -35,6 +33,7 @@
           actions = {
             currentSystem,
             target,
+            inputs,
             fragment,
             fragmentRelPath,
           }: [

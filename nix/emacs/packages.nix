@@ -39,6 +39,7 @@
         elpaDevelPackages.beframe
         elpaDevelPackages.cursory
         elpaDevelPackages.denote
+        elpaDevelPackages.dired-preview
         elpaDevelPackages.ef-themes
         elpaDevelPackages.fontaine
         elpaDevelPackages.lin

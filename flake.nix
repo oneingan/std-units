@@ -77,6 +77,7 @@
         ["tvheadend" "packages"]
         ["webgrabplus" "packages"]
         ["widevine" "packages"]
+        ["acestream" "packages"]
       ];
 
       nixosModules = std.harvest self [

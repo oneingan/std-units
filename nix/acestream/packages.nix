@@ -1,6 +1,9 @@
 {
   inputs,
   cell,
-}: {
-  mpv-acestream = inputs.nixpkgs.callPackage ./packages/mpv-acestream.nix {};
+}: let
+  inherit (inputs.nixpkgs) callPackage;
+in {
+  mpv-acestream = callPackage ./packages/mpv-acestream.nix {};
+  acestream-engine = callPackage ./packages/acestream-engine.nix {};
 }

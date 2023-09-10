@@ -78,6 +78,7 @@
         ["webgrabplus" "packages"]
         ["widevine" "packages"]
         ["acestream" "packages"]
+        ["yggdrasil" "packages"]
       ];
 
       nixosModules = std.harvest self [

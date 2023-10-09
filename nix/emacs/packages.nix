@@ -87,7 +87,7 @@
         vterm
         direnv
         ement
-        treesit-grammars.with-all-grammars
+        #treesit-grammars.with-all-grammars
       ];
   # ++ [
   # ement

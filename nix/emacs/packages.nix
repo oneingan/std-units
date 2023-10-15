@@ -54,13 +54,16 @@
         elpaDevelPackages.tmr
       ] ++ [
         ## third-party
-        cape
         consult
         corfu
+        devil
         dired-subtree
         elfeed
         embark
         embark-consult
+        exec-path-from-shell
+        expreg
+        breadcrumb
         goto-last-change
         inputs.nixpkgs.emacsPackages.jinx
         keycast
@@ -85,14 +88,11 @@
         nix-mode
         terraform-mode
         vterm
+        eat
         direnv
         ement
-        #treesit-grammars.with-all-grammars
+        treesit-grammars.with-all-grammars
       ];
-  # ++ [
-  # ement
-  # inputs.nixpkgs.emacsPackages.ement
-  # ];
 
   # packages = parsePackagesFromProtElpaPackage (builtins.readFile "${inputs.prot-dotfiles}/emacs/.emacs.d/prot-emacs-modules/prot-emacs-essentials.el");
 

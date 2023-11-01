@@ -3,20 +3,20 @@
 {
   swhkd = {
     pname = "swhkd";
-    version = "30f25b5bf99df5f16d91b51a7bd397c1de075085";
+    version = "f965c0b9e6bbcede8c33f42fa618339dead0a061";
     src = fetchFromGitHub {
-      owner = "waycrate";
+      owner = "oneingan";
       repo = "swhkd";
-      rev = "30f25b5bf99df5f16d91b51a7bd397c1de075085";
+      rev = "f965c0b9e6bbcede8c33f42fa618339dead0a061";
       fetchSubmodules = false;
-      sha256 = "sha256-K05v2xw7G/ZJsf62g696TOSZHMAOWf24sT9JcvvBNx0=";
+      sha256 = "sha256-H1iSVnRiydd2u2wjQ/dfdIcAorbqb/eJl1yidEHWtw0=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./swhkd-30f25b5bf99df5f16d91b51a7bd397c1de075085/Cargo.lock;
+      lockFile = ./swhkd-f965c0b9e6bbcede8c33f42fa618339dead0a061/Cargo.lock;
       outputHashes = {
         
       };
     };
-    date = "2023-10-16";
+    date = "2023-11-01";
   };
 }

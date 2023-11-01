@@ -2,11 +2,11 @@
     "swhkd": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./swhkd-30f25b5bf99df5f16d91b51a7bd397c1de075085/Cargo.lock",
+                "./swhkd-f965c0b9e6bbcede8c33f42fa618339dead0a061/Cargo.lock",
                 {}
             ]
         },
-        "date": "2023-10-16",
+        "date": "2023-11-01",
         "extract": null,
         "name": "swhkd",
         "passthru": null,
@@ -16,12 +16,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "waycrate",
+            "owner": "oneingan",
             "repo": "swhkd",
-            "rev": "30f25b5bf99df5f16d91b51a7bd397c1de075085",
-            "sha256": "sha256-K05v2xw7G/ZJsf62g696TOSZHMAOWf24sT9JcvvBNx0=",
+            "rev": "f965c0b9e6bbcede8c33f42fa618339dead0a061",
+            "sha256": "sha256-H1iSVnRiydd2u2wjQ/dfdIcAorbqb/eJl1yidEHWtw0=",
             "type": "github"
         },
-        "version": "30f25b5bf99df5f16d91b51a7bd397c1de075085"
+        "version": "f965c0b9e6bbcede8c33f42fa618339dead0a061"
     }
 }

@@ -1,4 +1,4 @@
 [swhkd]
-src.git = "https://github.com/waycrate/swhkd"
-fetch.github = "waycrate/swhkd"
+src.git = "https://github.com/oneingan/swhkd"
+fetch.github = "oneingan/swhkd"
 cargo_locks = ["Cargo.lock"]

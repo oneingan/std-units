@@ -1,27 +1,27 @@
 {
-  "swhkd": {
-    "cargoLocks": {
-      "Cargo.lock": [
-        "./swhkd-3b19fc33b32efde88311579152a1078a8004397c/Cargo.lock",
-        {}
-      ]
-    },
-    "date": "2022-12-23",
-    "extract": null,
-    "name": "swhkd",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "waycrate",
-      "repo": "swhkd",
-      "rev": "3b19fc33b32efde88311579152a1078a8004397c",
-      "sha256": "sha256-245Y3UicW33hrQ6Mtf07I9vsWSpuijIEoEhxIKtjVQE=",
-      "type": "github"
-    },
-    "version": "3b19fc33b32efde88311579152a1078a8004397c"
-  }
+    "swhkd": {
+        "cargoLocks": {
+            "Cargo.lock": [
+                "./swhkd-30f25b5bf99df5f16d91b51a7bd397c1de075085/Cargo.lock",
+                {}
+            ]
+        },
+        "date": "2023-10-16",
+        "extract": null,
+        "name": "swhkd",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "waycrate",
+            "repo": "swhkd",
+            "rev": "30f25b5bf99df5f16d91b51a7bd397c1de075085",
+            "sha256": "sha256-K05v2xw7G/ZJsf62g696TOSZHMAOWf24sT9JcvvBNx0=",
+            "type": "github"
+        },
+        "version": "30f25b5bf99df5f16d91b51a7bd397c1de075085"
+    }
 }

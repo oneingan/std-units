@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs.nixpkgs) lib rustPlatform writeShellScript;
+  inherit (inputs.nixpkgs) lib rustPlatform writeShellScript udev pkg-config;
   inherit (cell.sources.swhkd) pname version src cargoLock;
 
   swhkd = writeShellScript "swhkd" ''
@@ -19,6 +19,12 @@ in {
   swhkd = rustPlatform.buildRustPackage {
     inherit pname version src;
     cargoLock = cargoLock."Cargo.lock";
+
+    nativeBuildInputs = [ pkg-config ];
+
+    buildInputs = [
+      udev
+    ];
 
     postBuild = ''
       $src/scripts/build-polkit-policy.sh \

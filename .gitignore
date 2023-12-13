@@ -2,4 +2,4 @@
 /.data
 /.cache
 /.local
-result
+**/result

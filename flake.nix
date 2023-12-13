@@ -79,7 +79,6 @@
         ["widevine" "packages"]
         ["acestream" "packages"]
         ["yggdrasil" "packages"]
-        ["openziti" "packages"]
       ];
 
       nixosModules = std.harvest self [

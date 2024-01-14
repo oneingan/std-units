@@ -13,6 +13,7 @@
     emacsPackages
     emacsPackagesFor
     emacs-pgtk
+    callPackage
     
     fetchurl
     emacs
@@ -50,7 +51,9 @@
         elpaDevelPackages.pulsar
         elpaDevelPackages.spacious-padding
         elpaDevelPackages.standard-themes
+        elpaDevelPackages.substitute
         elpaDevelPackages.sxhkdrc-mode
+        elpaDevelPackages.theme-buffet
         elpaDevelPackages.tmr
       ] ++ [
         ## third-party
@@ -64,6 +67,7 @@
         exec-path-from-shell
         expreg
         breadcrumb
+        goto-chg
         goto-last-change
         inputs.nixpkgs.emacsPackages.jinx
         keycast
@@ -91,6 +95,8 @@
         eat
         direnv
         ement
+        forge
+        consult-gh
         treesit-grammars.with-all-grammars
       ];
 

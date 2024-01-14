@@ -7,29 +7,14 @@
     overlays = [(import inputs.emacs-overlay)];
   };
 
-  inherit
-    (pkgs)
-    lib
-    emacsPackages
-    emacsPackagesFor
-    emacs-pgtk
-    callPackage
-    
-    fetchurl
-    emacs
-    ;
+  inherit (pkgs) lib;
 
-  parsePackagesFromProtElpaPackage = configText: let
-    inherit (import "${inputs.emacs-overlay}/repos/fromElisp" {inherit pkgs;}) fromElisp;
-    recurse = item:
-      if builtins.isList item && item != []
-      then
-        if (builtins.head item) == "prot-emacs-elpa-package"
-        then [(builtins.tail (builtins.head (builtins.tail item)))] ++ map recurse item
-        else map recurse item
-      else [];
-  in
-    lib.flatten (map recurse (fromElisp configText));
+  # Copied from all-packages.nix, with modifications to support
+  # overrides.
+  emacsPackages = let epkgs = pkgs.emacsPackagesFor pkgs.emacs-pgtk;
+  in epkgs.overrideScope' overrides;
+
+  emacsWithPackages = emacsPackages.emacsWithPackages;
 
   extraPackages = epkgs:
     with epkgs;
@@ -100,11 +85,21 @@
         treesit-grammars.with-all-grammars
       ];
 
-  # packages = parsePackagesFromProtElpaPackage (builtins.readFile "${inputs.prot-dotfiles}/emacs/.emacs.d/prot-emacs-modules/prot-emacs-essentials.el");
+  overrides = self: super: {
+    consult-gh = super.consult-gh.override {
+      melpaBuild = args: super.melpaBuild ( args // {
+        version = "20231206";
+        src = pkgs.fetchFromGitHub {
+          owner = "armindarvish";
+          repo = "consult-gh";
+          rev = "a035eac54a3be270168e86f32075e5f6f426c103";
+          hash = "sha256-qZ7ra8Q8kcBDfR832rquKn8fy0UrNhonHZcX1oCz3dI=";
+        };
+      });
+    };
+  };
 
-  # extraPackages = epkgs: map (name: epkgs.${name}) packages;
-
-  finalEmacs = (emacsPackagesFor emacs-pgtk).emacsWithPackages extraPackages;
+  finalPackage = emacsWithPackages extraPackages;
 in {
-  prot-emacs = finalEmacs;
+  prot-emacs = finalPackage;
 }

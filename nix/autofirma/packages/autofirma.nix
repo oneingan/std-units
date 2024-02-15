@@ -55,7 +55,7 @@ in
 
       install -d $out/bin
       makeWrapper ${java}/bin/java $out/bin/${pname} \
-        --add-flags "-jar $out/share/autofirma/autofirma.jar $*"
+        --add-flags "-jar $out/share/autofirma/autofirma.jar"
 
       ${libressl}/bin/openssl x509 -inform DER -in usr/lib/AutoFirma/AutoFirma_ROOT.cer -out usr/lib/AutoFirma/AutoFirma_ROOT.crt
       install -Dm644 usr/lib/AutoFirma/AutoFirma_ROOT.crt $out/share/ca-certificates/trust-source/anchors/AutoFirma_ROOT.crt

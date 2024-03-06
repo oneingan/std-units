@@ -71,6 +71,7 @@
         ["lieer" "packages"]
         ["minisatip" "packages"]
         ["plex" "packages"]
+        ["plex-desktop" "packages"]
         ["river" "packages"]
         ["sway" "packages"]
         ["swhkd" "packages"]

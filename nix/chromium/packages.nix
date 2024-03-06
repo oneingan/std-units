@@ -36,18 +36,6 @@ in {
         name = "browserpass";
         id = "naepdomgkenhinolocfifgehidddafch";
       }
-      {
-        name = "metamask";
-        id = "nkbihfbeogaeaoehlefnkodbefgpgknn";
-      }
-      {
-        name = "urbit-visor";
-        id = "oadimaacghcacmfipakhadejgalcaepg";
-      }
-      {
-        name = "pricelabs.co";
-        id = "ahfbjnblgpemcceknnebmkjgbgkfdfod";
-      }
     ];
 
     sourcesFile = list:

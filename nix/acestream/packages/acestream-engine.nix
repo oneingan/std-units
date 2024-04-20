@@ -1,5 +1,5 @@
 { lib, stdenv, fetchzip, autoPatchelfHook,
-python38, python38Packages, libz, ffmpeg_4-headless }:
+python3, python3Packages, libz, ffmpeg_4-headless }:
 
 stdenv.mkDerivation rec {
   pname = "acestream-engine";
@@ -14,12 +14,12 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ autoPatchelfHook ];
 
   buildInputs = [
-    python38
+    python3
     libz
     ffmpeg_4-headless
   ];
 
-  pythonEnv = python38.withPackages (p: with p; [
+  pythonEnv = python3.withPackages (p: with p; [
     pycryptodome
     lxml
     apsw
@@ -37,7 +37,7 @@ stdenv.mkDerivation rec {
     cp acestreamengine $out/bin
 
     wrapProgram "$out/bin/acestreamengine" \
-      --prefix PYTHONPATH : "${pythonEnv}/${python38.sitePackages}"
+      --prefix PYTHONPATH : "${pythonEnv}/${python3.sitePackages}"
 
     cp -r lib $out/bin/
     cp -r data $out/bin/

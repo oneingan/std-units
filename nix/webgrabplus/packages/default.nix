@@ -2,7 +2,7 @@
   stdenv,
   makeWrapper,
   dotnet-runtime_6,
-  buildFHSUserEnv,
+  buildFHSEnv,
   iputils,
 }: let
   name = "webgrabplus";
@@ -38,8 +38,8 @@
     '';
   };
 in
-  buildFHSUserEnv {
-    name = "${name}-${version}";
+  buildFHSEnv {
+    name = "webgrabplus";
     targetPkgs = pkgs: [
       webgrabplus
       iputils

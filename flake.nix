@@ -4,11 +4,12 @@
   inputs = {
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
-    std.inputs.devshell.url = "github:numtide/devshell";
+    std.inputs.devshell.follows = "devshell";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     std-data-collection.url = "github:divnix/std-data-collection";
     std-data-collection.inputs.std.follows = "std";
     std-data-collection.inputs.nixpkgs.follows = "nixpkgs";
+    devshell.url = "github:numtide/devshell";
   };
 
   # for packages

@@ -3,14 +3,14 @@
 {
   tvheadend = {
     pname = "tvheadend";
-    version = "73a6bd00d29421da04be5e1c41b2097fdc9c148b";
+    version = "dd82541c4c4c372a5b6af15e3dc0477f75c1b1bd";
     src = fetchFromGitHub {
       owner = "tvheadend";
       repo = "tvheadend";
-      rev = "73a6bd00d29421da04be5e1c41b2097fdc9c148b";
+      rev = "dd82541c4c4c372a5b6af15e3dc0477f75c1b1bd";
       fetchSubmodules = false;
-      sha256 = "sha256-bU4XefIx8aC+PjqYF3ARq0b2TcpXQAhqhvOwuQr9r0A=";
+      sha256 = "sha256-+z8Ps4LB2rTh0udpcnjIogULnOtQhj7fTIL97ukNPkw=";
     };
-    date = "2024-04-26";
+    date = "2024-08-28";
   };
 }

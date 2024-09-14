@@ -23,6 +23,7 @@
         elpaDevelPackages.agitate
         elpaDevelPackages.altcaps
         elpaDevelPackages.beframe
+        elpaDevelPackages.consult-denote
         elpaDevelPackages.cursory
         elpaDevelPackages.denote
         elpaDevelPackages.dired-preview
@@ -44,6 +45,7 @@
         ## third-party
         consult
         corfu
+        csv-mode
         devil
         dired-subtree
         elfeed
@@ -66,6 +68,7 @@
         pass
         password-store
         rainbow-mode
+        ready-player
         substitute
         tempel
         trashed
@@ -74,6 +77,8 @@
         wgrep
       ] ++ [
         ## user
+        groovy-mode
+        jenkinsfile-mode
         nix-mode
         terraform-mode
         vterm

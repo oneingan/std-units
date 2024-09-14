@@ -46,17 +46,13 @@
         consult
         corfu
         csv-mode
-        devil
         dired-subtree
         elfeed
         embark
         embark-consult
-        exec-path-from-shell
         expreg
         breadcrumb
         goto-chg
-        goto-last-change
-        inputs.nixpkgs.emacsPackages.jinx
         keycast
         magit
         marginalia
@@ -69,8 +65,8 @@
         password-store
         rainbow-mode
         ready-player
+        show-font
         substitute
-        tempel
         trashed
         vertico
         vundo
@@ -82,7 +78,6 @@
         nix-mode
         terraform-mode
         vterm
-        eat
         direnv
         ement
         forge
@@ -91,17 +86,17 @@
       ];
 
   overrides = self: super: {
-    consult-gh = super.consult-gh.override {
-      melpaBuild = args: super.melpaBuild ( args // {
-        version = "20231206";
-        src = pkgs.fetchFromGitHub {
-          owner = "armindarvish";
-          repo = "consult-gh";
-          rev = "a035eac54a3be270168e86f32075e5f6f426c103";
-          hash = "sha256-qZ7ra8Q8kcBDfR832rquKn8fy0UrNhonHZcX1oCz3dI=";
-        };
-      });
-    };
+    # consult-gh = super.consult-gh.override {
+      # melpaBuild = args: super.melpaBuild ( args // {
+        # version = "20231206";
+        # src = pkgs.fetchFromGitHub {
+          # owner = "armindarvish";
+          # repo = "consult-gh";
+          # rev = "a035eac54a3be270168e86f32075e5f6f426c103";
+          # hash = "sha256-qZ7ra8Q8kcBDfR832rquKn8fy0UrNhonHZcX1oCz3dI=";
+        # };
+      # });
+    # };
   };
 
   finalPackage = emacsWithPackages extraPackages;

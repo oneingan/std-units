@@ -57,6 +57,10 @@
         magit
         marginalia
         markdown-mode
+	nerd-icons
+	nerd-icons-completion
+	nerd-icons-corfu
+	nerd-icons-dired
         olivetti
         ol-notmuch
         orderless

@@ -12,7 +12,7 @@
   # Copied from all-packages.nix, with modifications to support
   # overrides.
   emacsPackages = let epkgs = pkgs.emacsPackagesFor pkgs.emacs-pgtk;
-  in epkgs.overrideScope' overrides;
+  in epkgs.overrideScope overrides;
 
   emacsWithPackages = emacsPackages.emacsWithPackages;
 

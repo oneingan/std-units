@@ -17,7 +17,7 @@
     owner = "Paco8";
     repo = namespace;
     rev = "v${version}";
-    hash = "sha256-NDqB9M+dcF6/2FGPEkeHMdfr/Z+DAxHcIBPDuGo3b0g=";
+    hash = "sha256-YsbTyX0YVQ+1MOJNZs5Ez02rHbgF4VuaCmPDIYz+diw=";
   };
 
   propagatedBuildInputs = [

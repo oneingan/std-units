@@ -57,10 +57,10 @@
         magit
         marginalia
         markdown-mode
-	nerd-icons
-	nerd-icons-completion
-	nerd-icons-corfu
-	nerd-icons-dired
+	      nerd-icons
+	      nerd-icons-completion
+	      nerd-icons-corfu
+	      nerd-icons-dired
         olivetti
         ol-notmuch
         orderless
@@ -85,8 +85,9 @@
         direnv
         ement
         forge
-        consult-gh
+        # consult-gh
         treesit-grammars.with-all-grammars
+        gptel
       ];
 
   overrides = self: super: {

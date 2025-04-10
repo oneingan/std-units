@@ -11,7 +11,7 @@
 
   # Copied from all-packages.nix, with modifications to support
   # overrides.
-  emacsPackages = let epkgs = pkgs.emacsPackagesFor pkgs.emacs-pgtk;
+  emacsPackages = let epkgs = pkgs.emacsPackagesFor pkgs.emacs-git-pgtk;
   in epkgs.overrideScope overrides;
 
   emacsWithPackages = emacsPackages.emacsWithPackages;
@@ -25,7 +25,12 @@
         elpaDevelPackages.beframe
         elpaDevelPackages.consult-denote
         elpaDevelPackages.cursory
-        elpaDevelPackages.denote
+        # elpaDevelPackages.denote #broken
+        elpaDevelPackages.denote-journal
+        elpaDevelPackages.denote-markdown
+        elpaDevelPackages.denote-org
+        elpaDevelPackages.denote-silo
+        elpaDevelPackages.denote-sequence
         elpaDevelPackages.dired-preview
         elpaDevelPackages.ef-themes
         elpaDevelPackages.fontaine
@@ -35,6 +40,7 @@
         elpaDevelPackages.modus-themes
         elpaDevelPackages.notmuch-indicator
         elpaDevelPackages.pulsar
+        elpaDevelPackages.show-font
         elpaDevelPackages.spacious-padding
         elpaDevelPackages.standard-themes
         elpaDevelPackages.substitute
@@ -85,7 +91,7 @@
         direnv
         ement
         forge
-        # consult-gh
+        consult-gh
         treesit-grammars.with-all-grammars
         gptel
       ];

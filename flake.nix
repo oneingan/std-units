@@ -83,7 +83,7 @@
         ["yggdrasil" "packages"]
       ];
 
-      nixosModules = std.harvest self [
+      nixosModules = std.pick self [
         ["minisatip" "modules"]
         ["keyd" "modules"]
         ["swhkd" "modules"]
@@ -91,7 +91,7 @@
         ["webgrabplus" "modules"]        
       ];
 
-      homeModules = std.harvest self [
+      homeModules = std.pick self [
         ["river" "hm-modules"]
         ["swhkd" "hm-modules"]
       ];

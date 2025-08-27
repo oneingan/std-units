@@ -11,13 +11,13 @@
 }: buildKodiAddon rec {
   pname = "movistarplus";
   namespace = "plugin.video.movistarplus";
-  version = "0.10.4";
+  version = "0.11.2";
 
   src = fetchFromGitHub {
     owner = "Paco8";
     repo = namespace;
     rev = "v${version}";
-    hash = "sha256-/JCO+dE/JgKGMBIy7HbnSdVDDSjL2mZ7Te7cgX6Hgzo=";
+    hash = "sha256-t80u2wCgHe9oDe7qxtZ6GVt+ybnYkre3o3UJxQNVJf8=";
   };
 
   propagatedBuildInputs = [

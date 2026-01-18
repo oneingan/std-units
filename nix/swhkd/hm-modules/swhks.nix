@@ -5,11 +5,13 @@
   nixosConfig,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.services.swhks;
 
   nixosCfg = nixosConfig.systemd.user.services.swhks;
-in {
+in
+{
   options = {
     services.swhks = {
       enable = mkEnableOption nixosCfg.description;
@@ -35,7 +37,9 @@ in {
 
       Service = nixosCfg.serviceConfig;
 
-      Install = {WantedBy = [cfg.systemdTarget];};
+      Install = {
+        WantedBy = [ cfg.systemdTarget ];
+      };
     };
   };
 }

@@ -4,7 +4,8 @@
   fetchFromGitHub,
   runtimeShell,
   python3,
-}: let
+}:
+let
   version = "2.4.2";
 
   src = fetchFromGitHub {
@@ -26,7 +27,7 @@
         --replace /bin/sh ${runtimeShell}
     '';
 
-    propagatedBuildInputs = with pypkgs; [xlib];
+    propagatedBuildInputs = with pypkgs; [ xlib ];
 
     dontBuild = true;
 
@@ -37,32 +38,32 @@
     meta.mainProgram = pname;
   };
 in
-  stdenv.mkDerivation rec {
-    pname = "keyd";
-    inherit version src;
+stdenv.mkDerivation rec {
+  pname = "keyd";
+  inherit version src;
 
-    postPatch = ''
-      substituteInPlace Makefile \
-        --replace "\$(shell git describe --no-match --always --abbrev=7 --dirty)" "${version}" \
-        --replace PREFIX=/usr PREFIX= \
-        --replace SOCKET_PATH=/var/run/keyd.socket SOCKET_PATH=/run/keyd/keyd.socket
-    '';
+  postPatch = ''
+    substituteInPlace Makefile \
+      --replace "\$(shell git describe --no-match --always --abbrev=7 --dirty)" "${version}" \
+      --replace PREFIX=/usr PREFIX= \
+      --replace SOCKET_PATH=/var/run/keyd.socket SOCKET_PATH=/run/keyd/keyd.socket
+  '';
 
-    buildFlags = ["PREFIX=$(out)"];
+  buildFlags = [ "PREFIX=$(out)" ];
 
-    enableParallelBuilding = true;
+  enableParallelBuilding = true;
 
-    installFlags = ["DESTDIR=$(out)"];
+  installFlags = [ "DESTDIR=$(out)" ];
 
-    postInstall = ''
-      ln -sf ${lib.getExe appMap} $out/bin/${appMap.pname}
-      rm -rf $out/etc
-    '';
+  postInstall = ''
+    ln -sf ${lib.getExe appMap} $out/bin/${appMap.pname}
+    rm -rf $out/etc
+  '';
 
-    meta = with lib; {
-      description = "A key remapping daemon for linux.";
-      license = licenses.mit;
-      maintainers = with maintainers; [peterhoeg];
-      platforms = platforms.linux;
-    };
-  }
+  meta = with lib; {
+    description = "A key remapping daemon for linux.";
+    license = licenses.mit;
+    maintainers = with maintainers; [ peterhoeg ];
+    platforms = platforms.linux;
+  };
+}

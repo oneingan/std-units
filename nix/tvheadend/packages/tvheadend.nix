@@ -1,36 +1,38 @@
-{ lib
-, stdenv
-, fetchFromGitHub
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
 
-# buildtime
-, makeWrapper
-, pkg-config
-, python3
-, which
+  # buildtime
+  makeWrapper,
+  pkg-config,
+  python3,
+  which,
 
-# runtime
-, avahi
-, bzip2
-, dbus
-, dtv-scan-tables
-, ffmpeg_7
-, gettext
-, gnutar
-, gzip
-, libiconv
-, openssl
-, uriparser
-, zlib
-, libdvbcsa
-, x264
-, x265
-, libvpx
-, libopus
+  # runtime
+  avahi,
+  bzip2,
+  dbus,
+  dtv-scan-tables,
+  ffmpeg_7,
+  gettext,
+  gnutar,
+  gzip,
+  libiconv,
+  openssl,
+  uriparser,
+  zlib,
+  libdvbcsa,
+  x264,
+  x265,
+  libvpx,
+  libopus,
 }:
 
 let
   version = "4.3-unstable-2025-07-20";
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   pname = "tvheadend";
   inherit version;
 

@@ -1,9 +1,21 @@
 {
   inputs,
   cell,
-}: let
-  inherit (inputs.nixpkgs) lib rustPlatform writeShellScript udev pkg-config;
-  inherit (cell.sources.swhkd) pname version src cargoLock;
+}:
+let
+  inherit (inputs.nixpkgs)
+    lib
+    rustPlatform
+    writeShellScript
+    udev
+    pkg-config
+    ;
+  inherit (cell.sources.swhkd)
+    pname
+    version
+    src
+    cargoLock
+    ;
 
   swhkd = writeShellScript "swhkd" ''
     DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -15,7 +27,8 @@
       #exit 0
     fi
   '';
-in {
+in
+{
   swhkd = rustPlatform.buildRustPackage {
     inherit pname version src;
     cargoLock = cargoLock."Cargo.lock";
@@ -41,7 +54,7 @@ in {
       description = "Sxhkd clone for Wayland (works on TTY and X11 too)";
       homepage = "https://github.com/waycrate/swhkd";
       license = licenses.bsd2;
-      maintainers = [maintainers.uningan];
+      maintainers = [ maintainers.uningan ];
     };
   };
 }

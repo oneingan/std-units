@@ -1,7 +1,8 @@
 {
   inputs,
   cell,
-}: {
+}:
+{
   default = {
   };
 }

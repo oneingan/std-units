@@ -1,7 +1,8 @@
 {
   inputs,
   cell,
-}: {
+}:
+{
   plex = inputs.nixpkgs.plex;
   plex-pass = inputs.nixpkgs.plex.override {
     plexRaw = inputs.nixpkgs.plexRaw.overrideAttrs (old: rec {

@@ -1,9 +1,11 @@
 {
   inputs,
   cell,
-}: let
+}:
+let
   inherit (inputs) nixpkgs;
-in {
+in
+{
   lieer = nixpkgs.lieer.overrideAttrs (old: {
     version = "1.4-87e85ef";
     src = nixpkgs.fetchFromGitHub {

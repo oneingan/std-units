@@ -4,7 +4,8 @@
   dotnet-runtime_6,
   buildFHSEnv,
   iputils,
-}: let
+}:
+let
   name = "webgrabplus";
   version = "5.0.1";
   webgrabplus = stdenv.mkDerivation {
@@ -20,7 +21,7 @@
     # hidden subdirectory.
     setSourceRoot = "sourceRoot=`pwd`";
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [ makeWrapper ];
 
     buildPhase = false;
     installPhase = ''
@@ -38,11 +39,11 @@
     '';
   };
 in
-  buildFHSEnv {
-    name = "webgrabplus";
-    targetPkgs = pkgs: [
-      webgrabplus
-      iputils
-    ];
-    runScript = "webgrabplus";
-  }
+buildFHSEnv {
+  name = "webgrabplus";
+  targetPkgs = pkgs: [
+    webgrabplus
+    iputils
+  ];
+  runScript = "webgrabplus";
+}

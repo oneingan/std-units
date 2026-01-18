@@ -1,14 +1,17 @@
 {
   inputs,
   cell,
-}: {
-  webgrabplus = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
-    with lib; let
+}:
+{
+  webgrabplus =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    with lib;
+    let
       cfg = config.services.webgrabplus;
       #       stylesheetHeader = ''
       #         <?xml version="1.0"?>
@@ -59,7 +62,8 @@
       #         in attrsetToXml attrs name stylesheet;
       #
       #       configFile = attrsetToXml cfg.config "webgrabplus-config.xml";
-    in {
+    in
+    {
       options = {
         services.webgrabplus = {
           enable = mkEnableOption (lib.mdDoc "Enable WebGrab+Plus EPG grabber.");
@@ -120,7 +124,7 @@
           isSystemUser = true;
           group = "webgrabplus";
         };
-        users.groups.webgrabplus = {};
+        users.groups.webgrabplus = { };
 
         systemd.services.webgrabplus = {
           serviceConfig = {

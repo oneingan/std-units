@@ -1,5 +1,13 @@
-{ lib, stdenv, fetchzip, autoPatchelfHook,
-python3, python3Packages, libz, ffmpeg_4-headless }:
+{
+  lib,
+  stdenv,
+  fetchzip,
+  autoPatchelfHook,
+  python3,
+  python3Packages,
+  libz,
+  ffmpeg_4-headless,
+}:
 
 stdenv.mkDerivation rec {
   pname = "acestream-engine";
@@ -19,15 +27,17 @@ stdenv.mkDerivation rec {
     ffmpeg_4-headless
   ];
 
-  pythonEnv = python3.withPackages (p: with p; [
-    pycryptodome
-    lxml
-    apsw
-    psutil
-    pynacl
-    # iso8601
-  ]);
-  
+  pythonEnv = python3.withPackages (
+    p: with p; [
+      pycryptodome
+      lxml
+      apsw
+      psutil
+      pynacl
+      # iso8601
+    ]
+  );
+
   dontBuild = true;
 
   installPhase = ''

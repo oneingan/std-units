@@ -1,8 +1,9 @@
 {
   inputs,
   cell,
-}: let
-  urbit-drv = import inputs.urbit {system = "x86_64-linux";};
+}:
+let
+  urbit-drv = import inputs.urbit { system = "x86_64-linux"; };
 in
-  # urbit-drv.urbit
-  inputs.nixpkgs-urbit.legacyPackages.urbit
+# urbit-drv.urbit
+inputs.nixpkgs-urbit.legacyPackages.urbit

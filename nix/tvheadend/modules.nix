@@ -1,17 +1,21 @@
 {
   inputs,
   cell,
-}: {
-  tvheadend = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
-    with lib; let
+}:
+{
+  tvheadend =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    with lib;
+    let
       cfg = config.services.tvheadend;
       pidFile = "${config.users.users.tvheadend.home}/tvheadend.pid";
-    in {
+    in
+    {
       options = {
         services.tvheadend = {
           enable = mkEnableOption (lib.mdDoc "Tvheadend");
@@ -48,14 +52,14 @@
           createHome = true;
           isSystemUser = true;
           group = "tvheadend";
-          extraGroups = ["webgrabplus"];
+          extraGroups = [ "webgrabplus" ];
         };
-        users.groups.tvheadend = {};
+        users.groups.tvheadend = { };
 
         systemd.services.tvheadend = {
           description = "Tvheadend TV streaming server";
-          wantedBy = ["multi-user.target"];
-          after = ["network.target"];
+          wantedBy = [ "multi-user.target" ];
+          after = [ "network.target" ];
 
           serviceConfig = {
             Type = "forking";

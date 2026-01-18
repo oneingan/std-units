@@ -1,6 +1,7 @@
 {
   inputs,
   cell,
-}: {
-  autofirma = inputs.nixpkgs.callPackage ./packages/autofirma.nix {};
+}:
+{
+  autofirma = inputs.nixpkgs.callPackage ./packages/autofirma.nix { };
 }

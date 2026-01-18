@@ -1,16 +1,17 @@
 {
   inputs,
   cell,
-}: let
+}:
+let
   inherit (inputs) nixpkgs;
-  inherit
-    (inputs.nixpkgs)
+  inherit (inputs.nixpkgs)
     gzip
     wget
     callPackage
     ;
   pkgs = nixpkgs;
-in {
+in
+{
   movistar-epg = pkgs.writeShellApplication {
     name = "tv_grab_EpgGratis";
     text = builtins.readFile ./tv_grab_EpgGratis;
@@ -20,5 +21,5 @@ in {
     ];
     # checkPhase = false;
   };
-  webgrabplus = callPackage ./packages/default.nix {};
+  webgrabplus = callPackage ./packages/default.nix { };
 }

@@ -5,20 +5,26 @@
   wrapGAppsHook,
   makeShellWrapper,
   squashfsTools,
-}: let
+}:
+let
   pname = "plex-desktop";
   version = "1.83.1";
   snapId = "qc6MFRM433ZhI1XjVzErdHivhSOhlpf0";
   snapRev = "54";
-in stdenv.mkDerivation {
-  inherit pname version;  
+in
+stdenv.mkDerivation {
+  inherit pname version;
 
   src = fetchurl {
     url = "https://api.snapcraft.io/api/v1/snaps/download/${snapId}_${snapRev}.snap";
     hash = "sha256-cggDlhVqxu2xk/gWyZCemtSa4DMSOAg6mana6SIkcAI=";
   };
 
-  nativeBuildInputs = [ wrapGAppsHook makeShellWrapper squashfsTools ];
+  nativeBuildInputs = [
+    wrapGAppsHook
+    makeShellWrapper
+    squashfsTools
+  ];
 
   dontStrip = true;
   dontPatchELF = true;
@@ -52,7 +58,10 @@ in stdenv.mkDerivation {
     description = "Clientless remote desktop gateway";
     homepage = "https://guacamole.incubator.apache.org/";
     license = licenses.asl20;
-    maintainers = with maintainers; [tomberek];
-    platforms = ["x86_64-linux" "i686-linux"];
+    maintainers = with maintainers; [ tomberek ];
+    platforms = [
+      "x86_64-linux"
+      "i686-linux"
+    ];
   };
 }

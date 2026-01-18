@@ -1,7 +1,8 @@
 {
   inputs,
   cell,
-} @ block: {
+}@block:
+{
   swhkd = ./swhkd.nix;
   swhks = ./swhks.nix;
 }

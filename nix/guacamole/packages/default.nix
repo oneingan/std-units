@@ -89,7 +89,10 @@ stdenv.mkDerivation rec {
     description = "Clientless remote desktop gateway";
     homepage = "https://guacamole.incubator.apache.org/";
     license = licenses.asl20;
-    maintainers = with maintainers; [tomberek];
-    platforms = ["x86_64-linux" "i686-linux"];
+    maintainers = with maintainers; [ tomberek ];
+    platforms = [
+      "x86_64-linux"
+      "i686-linux"
+    ];
   };
 }

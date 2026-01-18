@@ -4,7 +4,8 @@
   fetchurl,
   fetchFromGitHub,
   dockerTools,
-}: {
+}:
+{
   widevine = {
     pname = "widevine";
     version = "4.10.2557.0";

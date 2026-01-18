@@ -18,84 +18,168 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = {
-    std,
-    self,
-    ...
-  } @ inputs:
-    std.growOn {
-      inherit inputs;
-      cellsFrom = ./nix;
-      cellBlocks = with std.blockTypes; [
-        # reusable software
-        {
-          name = "sources";
-          type = "nvfetcher";
-          actions = {
-            currentSystem,
-            target,
-            inputs,
-            fragment,
-            fragmentRelPath,
-          }: [
-            {
-              name = "update";
-              description = "Update generated nix expression";
-              command = inputs.nixpkgs.legacyPackages.${currentSystem}.writeShellScript "sources-update" ''
-                ${inputs.nixpkgs.legacyPackages.${currentSystem}.nvfetcher}/bin/nvfetcher --config $(nix build ${builtins.unsafeDiscardStringContext target.drvPath} --no-link --print-out-paths) --build-dir $PRJ_ROOT/_sources/
-              '';
-            }
-          ];
-        }
-        (installables "packages")
-
-        # modules implement
-        (functions "modules")
-        (functions "hm-modules")
-
-        # devshells can be entered
-        (devshells "devshells")
-      ];
-      nixpkgsConfig = {
-        allowUnfree = true;
-      };
-    }
-    # soil
+  outputs =
     {
-      packages = std.harvest self [
-        ["autofirma" "packages"]
-        ["chromium" "packages"]
-        ["emacs" "packages"]
-        ["firefox" "packages"]
-        ["keyd" "packages"]
-        ["kodi" "packages"]
-        ["lieer" "packages"]
-        ["minisatip" "packages"]
-        ["plex" "packages"]
-        ["plex-desktop" "packages"]
-        ["river" "packages"]
-        ["sway" "packages"]
-        ["swhkd" "packages"]
-        ["tvheadend" "packages"]
-        ["webgrabplus" "packages"]
-        ["widevine" "packages"]
-        ["acestream" "packages"]
-        ["yggdrasil" "packages"]
-      ];
+      std,
+      self,
+      ...
+    }@inputs:
+    std.growOn
+      {
+        inherit inputs;
+        cellsFrom = ./nix;
+        cellBlocks = with std.blockTypes; [
+          # reusable software
+          {
+            name = "sources";
+            type = "nvfetcher";
+            actions =
+              {
+                currentSystem,
+                target,
+                inputs,
+                fragment,
+                fragmentRelPath,
+              }:
+              [
+                {
+                  name = "update";
+                  description = "Update generated nix expression";
+                  command = inputs.nixpkgs.legacyPackages.${currentSystem}.writeShellScript "sources-update" ''
+                    ${
+                      inputs.nixpkgs.legacyPackages.${currentSystem}.nvfetcher
+                    }/bin/nvfetcher --config $(nix build ${builtins.unsafeDiscardStringContext target.drvPath} --no-link --print-out-paths) --build-dir $PRJ_ROOT/_sources/
+                  '';
+                }
+              ];
+          }
+          (installables "packages")
 
-      nixosModules = std.pick self [
-        ["minisatip" "modules"]
-        ["keyd" "modules"]
-        ["swhkd" "modules"]
-        ["tvheadend" "modules"]
-        ["webgrabplus" "modules"]        
-      ];
+          # modules implement
+          (functions "modules")
+          (functions "hm-modules")
 
-      homeModules = std.pick self [
-        ["river" "hm-modules"]
-        ["swhkd" "hm-modules"]
-      ];
+          # devshells can be entered
+          (devshells "devshells")
+        ];
+        nixpkgsConfig = {
+          allowUnfree = true;
+        };
+      }
+      # soil
+      {
+        packages = std.harvest self [
+          [
+            "autofirma"
+            "packages"
+          ]
+          [
+            "chromium"
+            "packages"
+          ]
+          [
+            "emacs"
+            "packages"
+          ]
+          [
+            "firefox"
+            "packages"
+          ]
+          [
+            "keyd"
+            "packages"
+          ]
+          [
+            "kodi"
+            "packages"
+          ]
+          [
+            "lieer"
+            "packages"
+          ]
+          [
+            "minisatip"
+            "packages"
+          ]
+          [
+            "plex"
+            "packages"
+          ]
+          [
+            "plex-desktop"
+            "packages"
+          ]
+          [
+            "river"
+            "packages"
+          ]
+          [
+            "sway"
+            "packages"
+          ]
+          [
+            "swhkd"
+            "packages"
+          ]
+          [
+            "tvheadend"
+            "packages"
+          ]
+          [
+            "webgrabplus"
+            "packages"
+          ]
+          [
+            "widevine"
+            "packages"
+          ]
+          [
+            "acestream"
+            "packages"
+          ]
+          [
+            "yggdrasil"
+            "packages"
+          ]
+        ];
 
-      devShells = std.harvest self ["_automation" "devshells"];
-    };
+        nixosModules = std.pick self [
+          [
+            "minisatip"
+            "modules"
+          ]
+          [
+            "keyd"
+            "modules"
+          ]
+          [
+            "swhkd"
+            "modules"
+          ]
+          [
+            "tvheadend"
+            "modules"
+          ]
+          [
+            "webgrabplus"
+            "modules"
+          ]
+        ];
+
+        homeModules = std.pick self [
+          [
+            "river"
+            "hm-modules"
+          ]
+          [
+            "swhkd"
+            "hm-modules"
+          ]
+        ];
+
+        devShells = std.harvest self [
+          "_automation"
+          "devshells"
+        ];
+      };
 }

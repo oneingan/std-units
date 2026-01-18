@@ -5,23 +5,28 @@
   nixosConfig,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.services.swhkd;
 
-  keybindingsStr = concatStringsSep "\n" (mapAttrsToList (hotkey: command:
-    optionalString (command != null) ''
-      ${hotkey}
-        ${command}
-    '')
-  cfg.keybindings);
-in {
+  keybindingsStr = concatStringsSep "\n" (
+    mapAttrsToList (
+      hotkey: command:
+      optionalString (command != null) ''
+        ${hotkey}
+          ${command}
+      ''
+    ) cfg.keybindings
+  );
+in
+{
   options = {
     services.swhkd = {
       enable = mkEnableOption "swhkd hotkey daemon";
 
       keybindings = mkOption {
         type = types.attrsOf (types.nullOr types.str);
-        default = {};
+        default = { };
         description = "An attribute set that assigns hotkeys to commands.";
         example = literalExpression ''
           {
@@ -44,7 +49,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    xdg.configFile."swhkd/swhkdrc".text =
-      concatStringsSep "\n" [keybindingsStr cfg.extraConfig];
+    xdg.configFile."swhkd/swhkdrc".text = concatStringsSep "\n" [
+      keybindingsStr
+      cfg.extraConfig
+    ];
   };
 }

@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-evhrt3ZwRvUsvziSiDEtKa8JdgXlrFSC9CSXoARQP5I=";
   };
 
-  buildInputs = [libdvbcsa];
+  buildInputs = [ libdvbcsa ];
 
   installPhase = ''
     mkdir -p $out/bin
@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "Minisatip is an SATIP server for linux using local DVB-S2, DVB-C, DVB-T or ATSC cards";
     homepage = "https://github.com/catalinii/minisatip";
-    license = with licenses; [];
-    maintainers = with maintainers; [];
+    license = with licenses; [ ];
+    maintainers = with maintainers; [ ];
   };
 }

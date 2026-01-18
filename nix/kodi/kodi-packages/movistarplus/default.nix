@@ -7,8 +7,9 @@
   dateutil,
   inputstream-adaptive,
   tml2ssa,
-  zip
-}: buildKodiAddon rec {
+  zip,
+}:
+buildKodiAddon rec {
   pname = "movistarplus";
   namespace = "plugin.video.movistarplus";
   version = "0.11.2";

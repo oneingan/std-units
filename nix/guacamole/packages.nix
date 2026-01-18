@@ -1,8 +1,9 @@
 {
   inputs,
   cell,
-}: {
-  default = inputs.nixpkgs.callPackage ./packages/default.nix {};
+}:
+{
+  default = inputs.nixpkgs.callPackage ./packages/default.nix { };
 }
 # guacamole> ------------------------------------------------
 # guacamole> guacamole-server version 1.5.0
@@ -36,4 +37,3 @@
 # guacamole>    FreeRDP plugins: /nix/store/74pcyn15rx6hgm3rzlm7rkhci3fr10g8-freerdp-2.10.0/lib/freerdp2
 # guacamole>    Init scripts: no
 # guacamole>    Systemd units: no
-

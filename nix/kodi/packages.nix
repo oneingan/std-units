@@ -1,12 +1,14 @@
 {
   inputs,
   cell,
-}: let
+}:
+let
   inherit (inputs.nixpkgs) callPackage kodi-wayland;
 
   myKodiPackages = callPackage ./kodi-packages { };
-    
-in {
+
+in
+{
   kodi-wl-hts = kodi-wayland.withPackages (exts: [
     exts.pvr-hts
     exts.pvr-iptvsimple

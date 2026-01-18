@@ -1,26 +1,28 @@
 {
   inputs,
   cell,
-}: {
-  river = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
-    with lib; let
+}:
+{
+  river =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    with lib;
+    let
       cfg = config.wayland.windowManager.river;
 
-      configFile = pkgs.writeShellScript "river.conf" (concatStringsSep "\n"
-        ((
-            if cfg.config != null
-            then with cfg.config; []
-            else []
-          )
-          ++ (optional cfg.systemdIntegration ''
-              ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP; systemctl --user start river-session.target'')
-          ++ [cfg.extraConfig]));
-    in {
+      configFile = pkgs.writeShellScript "river.conf" (
+        concatStringsSep "\n" (
+          (if cfg.config != null then with cfg.config; [ ] else [ ])
+          ++ (optional cfg.systemdIntegration ''${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP; systemctl --user start river-session.target'')
+          ++ [ cfg.extraConfig ]
+        )
+      );
+    in
+    {
       options.wayland.windowManager.river = {
         enable = mkEnableOption "river wayland compositor";
 
@@ -77,10 +79,10 @@
         systemd.user.targets.river-session = mkIf cfg.systemdIntegration {
           Unit = {
             Description = "river compositor session";
-            Documentation = ["man:systemd.special(7)"];
-            BindsTo = ["graphical-session.target"];
-            Wants = ["graphical-session-pre.target"];
-            After = ["graphical-session-pre.target"];
+            Documentation = [ "man:systemd.special(7)" ];
+            BindsTo = [ "graphical-session.target" ];
+            Wants = [ "graphical-session-pre.target" ];
+            After = [ "graphical-session-pre.target" ];
           };
         };
       };

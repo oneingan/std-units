@@ -3,8 +3,9 @@
   fetchFromGitHub,
   gettext,
   php,
-  zip
-}: buildKodiAddon rec {
+  zip,
+}:
+buildKodiAddon rec {
   pname = "ttml2ssa";
   namespace = "script.module.ttml2ssa";
   version = "0.3.8";

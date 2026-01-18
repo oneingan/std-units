@@ -1,6 +1,7 @@
 {
   inputs,
   cell,
-}: {
-  yggdrasil = inputs.nixpkgs.callPackage ./packages/default.nix {};
+}:
+{
+  yggdrasil = inputs.nixpkgs.callPackage ./packages/default.nix { };
 }

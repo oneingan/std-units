@@ -1,4 +1,9 @@
-{ buildKodiAddon, lib, fetchzip, rel}: 
+{
+  buildKodiAddon,
+  lib,
+  fetchzip,
+  rel,
+}:
 
 buildKodiAddon rec {
   pname = "pytz";

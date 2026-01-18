@@ -13,8 +13,9 @@
   gdk-pixbuf,
   glib,
   gtk3,
-  extraOptions ? [],
-}: let
+  extraOptions ? [ ],
+}:
+let
   baseWrapper = writeShellScriptBin "river" ''
     set -o errexit
     if [ ! "$_RIVER_WRAPPER_ALREADY_EXECUTED" ]; then
@@ -26,35 +27,33 @@
       export DBUS_SESSION_BUS_ADDRESS
       exec ${river}/bin/river "$@"
     else
-      exec ${
-      if !dbusSupport
-      then ""
-      else "${dbus}/bin/dbus-run-session"
-    } ${river}/bin/river "$@"
+      exec ${if !dbusSupport then "" else "${dbus}/bin/dbus-run-session"} ${river}/bin/river "$@"
     fi
   '';
 in
-  symlinkJoin {
-    name = "river-${river.version}";
+symlinkJoin {
+  name = "river-${river.version}";
 
-    paths =
-      (lib.optional withBaseWrapper baseWrapper)
-      ++ [river];
+  paths = (lib.optional withBaseWrapper baseWrapper) ++ [ river ];
 
-    strictDeps = false;
-    nativeBuildInputs =
-      [makeWrapper]
-      ++ (lib.optional withGtkWrapper wrapGAppsHook);
+  strictDeps = false;
+  nativeBuildInputs = [ makeWrapper ] ++ (lib.optional withGtkWrapper wrapGAppsHook);
 
-    buildInputs = lib.optionals withGtkWrapper [gdk-pixbuf glib gtk3];
+  buildInputs = lib.optionals withGtkWrapper [
+    gdk-pixbuf
+    glib
+    gtk3
+  ];
 
-    # We want to run wrapProgram manually
-    dontWrapGApps = true;
+  # We want to run wrapProgram manually
+  dontWrapGApps = true;
 
-    postBuild = ''
-      ${lib.optionalString withGtkWrapper "gappsWrapperArgsHook"}
-      wrapProgram $out/bin/river \
-        ${lib.optionalString withGtkWrapper ''"''${gappsWrapperArgs[@]}"''} \
-        ${lib.optionalString (extraOptions != []) "${lib.concatMapStrings (x: " --add-flags " + x) extraOptions}"}
-    '';
-  }
+  postBuild = ''
+    ${lib.optionalString withGtkWrapper "gappsWrapperArgsHook"}
+    wrapProgram $out/bin/river \
+      ${lib.optionalString withGtkWrapper ''"''${gappsWrapperArgs[@]}"''} \
+      ${lib.optionalString (extraOptions != [ ])
+        "${lib.concatMapStrings (x: " --add-flags " + x) extraOptions}"
+      }
+  '';
+}

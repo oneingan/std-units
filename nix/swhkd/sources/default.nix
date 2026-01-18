@@ -2,4 +2,4 @@
   inputs,
   cell,
 }:
-inputs.nixpkgs.callPackage ./generated.nix {}
+inputs.nixpkgs.callPackage ./generated.nix { }

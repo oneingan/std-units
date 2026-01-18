@@ -1,27 +1,36 @@
 #from https://github.com/danielphan2003/flk/blob/main/cells/nixos/nixosModules/services/misc/swhkd.nix
 {
-  swhkd = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
-    with lib; let
+  swhkd =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    with lib;
+    let
       cfg = config.services.swhkd;
 
-      keybindingsStr = concatStringsSep "\n" (mapAttrsToList (hotkey: command:
-        optionalString (command != null) ''
-          ${hotkey}
-            ${command}
-        '')
-      cfg.keybindings);
+      keybindingsStr = concatStringsSep "\n" (
+        mapAttrsToList (
+          hotkey: command:
+          optionalString (command != null) ''
+            ${hotkey}
+              ${command}
+          ''
+        ) cfg.keybindings
+      );
 
-      configStr = concatStringsSep "\n" [keybindingsStr cfg.extraConfig];
+      configStr = concatStringsSep "\n" [
+        keybindingsStr
+        cfg.extraConfig
+      ];
 
-      devicesStr = concatMapStringsSep " " (x: "--device ${x}") (cfg.devices or []);
+      devicesStr = concatMapStringsSep " " (x: "--device ${x}") (cfg.devices or [ ]);
 
       configFile = pkgs.writeText "swhkdrc" configStr;
-    in {
+    in
+    {
       options = {
         services.swhkd = {
           enable = mkEnableOption "swhkd";
@@ -36,7 +45,7 @@
 
           keybindings = mkOption {
             type = types.attrsOf (types.nullOr types.str);
-            default = {};
+            default = { };
             description = "An attribute set that assigns hotkeys to commands.";
             example = literalExpression ''
               {
@@ -76,7 +85,7 @@
         };
       };
       config = mkIf cfg.enable {
-        environment.systemPackages = [cfg.package];
+        environment.systemPackages = [ cfg.package ];
 
         environment.etc."swhkd/swhkdrc".source = configFile;
 
@@ -87,7 +96,7 @@
         systemd.user.services.swhkd = {
           description = "swhkd hotkey daemon";
 
-          bindsTo = ["default.target"];
+          bindsTo = [ "default.target" ];
 
           script = ''
             ${config.security.wrapperDir}/pkexec ${cfg.package}/bin/swhkd \
@@ -97,11 +106,11 @@
               ${optionalString cfg.debug "--debug"}
           '';
 
-          restartTriggers = [configFile];
+          restartTriggers = [ configFile ];
 
           serviceConfig.Restart = "always";
 
-          wantedBy = ["default.target"];
+          wantedBy = [ "default.target" ];
           preStop = ''
             ${config.security.wrapperDir}/pkexec ${cfg.package}/bin/swhkd stop
           '';

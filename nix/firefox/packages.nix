@@ -1,7 +1,8 @@
 {
   inputs,
   cell,
-}: let
+}:
+let
   inherit (inputs.nixpkgs) fetchurl wrapFirefox firefox-unwrapped;
   ublock_origin = fetchurl {
     url = "https://addons.mozilla.org/firefox/downloads/file/3871774/ublock_origin-1.39.0-an+fx.xpi";
@@ -23,7 +24,8 @@
     url = "https://addons.mozilla.org/firefox/downloads/file/4096431/nordvpn_proxy_extension-2.73.8.xpi";
     hash = "sha256-pp/b4XIvozM5+PsUItO75l4TdaEJLmkAq150crKyZX8=";
   };
-in {
+in
+{
   firefox = wrapFirefox firefox-unwrapped {
     extraPolicies = {
       CaptivePortal = false;

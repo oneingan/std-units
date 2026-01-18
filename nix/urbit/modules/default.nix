@@ -1,6 +1,7 @@
 {
   inputs,
   cell,
-} @ block: {
+}@block:
+{
   urbit = import ./urbit.nix block;
 }
